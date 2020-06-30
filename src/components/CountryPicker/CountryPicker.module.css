@@ -1,19 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,900;1,300;1,400;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&display=swap");
 
 .container {
-  display : flex;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
 .formControl {
-  width : 50%;
+  width: 50%;
 }
 
 .content {
   margin-right: 15px;
-  font-family: 'Roboto', sans-serif;
-  font-style: italic;
+  font-family: "Montserrat", sans-serif;
+  /* font-style: italic; */
   font-weight: 400;
 }

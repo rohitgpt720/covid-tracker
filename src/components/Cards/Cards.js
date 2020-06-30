@@ -1,26 +1,34 @@
 //Basic React imports
-import React from 'react';
+import React from "react";
 
 //Our Imports
-import styles from './Cards.module.css'
+import styles from "./Cards.module.css";
 
 //Third Party Imports
-import { Card, CardContent, Typography, Grid } from '@material-ui/core';
-import CountUp from 'react-countup';
-import cx from 'classnames';
+import { Card, CardContent, Typography, Grid } from "@material-ui/core";
+import CountUp from "react-countup";
+import cx from "classnames";
 
-export const Cards = ( { data: {confirmed, deaths, recovered, lastUpdate} } ) => {
-  if(!confirmed){
-    return 'Loading..'
+export const Cards = ({
+  data: { confirmed, deaths, recovered, lastUpdate },
+}) => {
+  if (!confirmed) {
+    return "Loading..";
   }
-  
+
   return (
     <div className={styles.container}>
-      <Grid container spacing={5} justify="center"> 
-        <Grid item component={Card} xs={12} md={3} className = {cx(styles.card,styles.confirmed)}>
+      <Grid container spacing={5} justify="center">
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          md={3}
+          className={cx(styles.card, styles.confirmed)}
+        >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Infected 
+              Infected
             </Typography>
             <Typography variant="h5">
               <CountUp
@@ -38,10 +46,16 @@ export const Cards = ( { data: {confirmed, deaths, recovered, lastUpdate} } ) =>
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card} xs={12} md={4} className = {cx(styles.card,styles.recovered)}>
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          md={4}
+          className={cx(styles.card, styles.recovered)}
+        >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Recovered 
+              Recovered
             </Typography>
             <Typography variant="h5">
               <CountUp
@@ -59,10 +73,16 @@ export const Cards = ( { data: {confirmed, deaths, recovered, lastUpdate} } ) =>
             </Typography>
           </CardContent>
         </Grid>
-        <Grid item component={Card} xs={12} md={3} className = {cx(styles.card,styles.deaths)}>
+        <Grid
+          item
+          component={Card}
+          xs={12}
+          md={3}
+          className={cx(styles.card, styles.deaths)}
+        >
           <CardContent>
             <Typography color="textSecondary" gutterBottom>
-              Deaths 
+              Deaths
             </Typography>
             <Typography variant="h5">
               <CountUp
@@ -73,7 +93,7 @@ export const Cards = ( { data: {confirmed, deaths, recovered, lastUpdate} } ) =>
               />
             </Typography>
             <Typography color="textSecondary">
-            {new Date(lastUpdate).toDateString()}
+              {new Date(lastUpdate).toDateString()}
             </Typography>
             <Typography variant="body2">
               Number of deaths due to coronavirus.
@@ -82,5 +102,5 @@ export const Cards = ( { data: {confirmed, deaths, recovered, lastUpdate} } ) =>
         </Grid>
       </Grid>
     </div>
-  )
-}
+  );
+};
